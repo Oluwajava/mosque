@@ -1,0 +1,83 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+
+    <div class="profile">
+      <ion-avatar>
+        <img src="assets/icon/Sefiya_Avatar.png" *ngIf="!!base64Image === false" class="image-thumbnail" width="200" height="80" (click)="takePicture()"/>
+        <img src="{{base64Image}}" *ngIf="!!base64Image" class="image-thumbnail" width="200" height="80" />
+
+      </ion-avatar>
+      <ion-label text-center color="white" no-margin><h4 no-margin>Sefiya Robinson</h4></ion-label>
+      <ion-label text-center color="white">Lekki, Lagos Nigeria</ion-label>
+    </div>
+
+
+  <ion-card class="user-info">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="info-section">
+          <ion-row><ion-avatar class="profile-icon"><img src="assets/icon/Followers.png"/></ion-avatar></ion-row>
+          <ion-row><ion-label text-center no-margin margin-top><h1 class="primary">400</h1></ion-label></ion-row>
+          <ion-row><ion-label text-center no-margin color="primary">Followers</ion-label></ion-row>
+        </ion-col>
+        <ion-col class="info-section">
+          <ion-row><ion-avatar class="profile-icon"><img src="assets/icon/Following.png"/></ion-avatar></ion-row>
+          <ion-row><ion-label text-center no-margin margin-top><h1 class="primary">100</h1></ion-label></ion-row>
+          <ion-row><ion-label text-center no-margin color="primary">Following</ion-label></ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-row><ion-avatar class="profile-icon"><img src="assets/icon/Mosques_Logo.png"/></ion-avatar></ion-row>
+          <ion-row><ion-label text-center no-margin margin-top><h1 class="primary">50</h1></ion-label></ion-row>
+          <ion-row><ion-label text-center no-margin color="primary">Mosques</ion-label></ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <div padding>
+    <ion-segment [(ngModel)]="category">
+      <ion-segment-button value="about">
+        About
+      </ion-segment-button>
+      <ion-segment-button value="feeds">
+        Feeds
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="category">
+    <ion-list *ngSwitchCase="'about'">
+      <ion-item no-lines>
+        <h2 class="primary">Location</h2>
+        <p class="primary">Lekki, Lagos Nigeria</p>
+        <ion-icon name="pin" item-end large style="color: #FF893C"></ion-icon>
+      </ion-item>
+
+      <ion-item no-lines>
+        <h2 class="primary">About Me</h2>
+        <p class="primary">Muslim, Mother, Business Woman</p>
+      </ion-item>
+
+      <ion-item no-lines>
+        <h2 class="primary">Date of Birth</h2>
+        <p class="primary">January 17, 1975</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'feeds'">
+      <card [card]="feed" *ngFor="let feed of feeds"></card>
+    </ion-list>
+  </div>
+
+
+
+</ion-content>

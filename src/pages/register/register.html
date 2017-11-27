@@ -1,0 +1,27 @@
+<ion-content class="body">
+
+  <ion-item class="header" col-12 no-lines>
+    <img class="header-title center" src="assets/icon/Nadwat_Splash_Logo.png">
+  </ion-item>
+
+  <ion-list inset padding>
+
+    <form [formGroup]="signupForm" (ngSubmit)="login(signupForm.value)">
+      <ion-item padding>
+        <ion-input formControlName="fullName"  type="text" placeholder="Full Name" color="white"></ion-input>
+      </ion-item>
+      <ion-item padding>
+        <ion-input formControlName="userName"  type="text" placeholder="Username" color="white"></ion-input>
+      </ion-item>
+      <ion-item class="password-item" padding>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+      <button ion-button full>SIGN IN</button>
+      <ion-label color="white" text-center (click)="login()">Already registered? Sign in</ion-label>
+    </form>
+  </ion-list>
+
+  <ion-footer><ion-label text-center color="white">&copy; FMS 2017</ion-label></ion-footer>
+</ion-content>
+
+

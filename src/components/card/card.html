@@ -1,0 +1,36 @@
+<ion-card>
+
+  <ion-item>
+    <ion-row>
+      <ion-col col-2>
+        <ion-avatar>
+          <img src="{{_card.icon}}">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <h2>{{_card.name}}</h2>
+        <p>{{_card.date}}</p>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="md-more" md="md-more" (click)="presentPopover($event)" end></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <img src="{{_card.feedImage}}">
+
+  <ion-card-content class="no-padding-bottom">
+    <p>{{_card.feedText}}</p>
+    <ion-row class="no-padding-left">
+      <ion-col col-2 class="card-icon no-padding-left"><ion-icon name="heart-outline"></ion-icon></ion-col>
+      <ion-col col-2 class="card-icon"><ion-icon ios="ios-chatboxes-outline" md="md-chatboxes" (click)="presentModal()"></ion-icon></ion-col>
+      <ion-col col-2 class="card-icon"><ion-icon ios="ios-paper-plane-outline" md="md-paper-plane"></ion-icon></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-label no-margin>{{_card.likes}} likes</ion-label>
+    </ion-row>
+  </ion-card-content>
+
+
+
+</ion-card>
